@@ -106,7 +106,7 @@ export default function Home() {
     // Textsub Animation
     tl.fromTo(
       ".text2sub",
-      { backgroundColor: "#fff" },
+      { backgroundColor: "transparent" },
       { backgroundColor: "#ab7d7d", duration: 1, ease: "power2.inOut" },
       "+=0.8"
     );
