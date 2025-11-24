@@ -1,25 +1,141 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Home() {
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.set(
+      [".text1", ".text2", ".text2", ".text3", ".subtext", ".input", ".text4"],
+      {
+        opacity: 0,
+      }
+    );
+
+    tl.set(".logo", {
+      y: 160,
+      opacity: 0,
+      scale: 0.5,
+      filter: "blur(4px)",
+    });
+
+    // Logo Animation
+    tl.fromTo(
+      ".logo",
+      { opacity: 0, scale: 0.5, filter: "blur(4px)" },
+      {
+        opacity: 100,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+    tl.fromTo(
+      ".logo",
+      { y: 160 },
+      {
+        y: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      "+=0.5"
+    );
+
+    // Text Animation
+    tl.fromTo(
+      ".text1",
+      { opacity: 0, sacle: 0.5, filter: "blur(4px)" },
+      {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "-=0.5"
+    );
+
+    tl.fromTo(
+      ".text2",
+      { opacity: 0, sacle: 0.5, filter: "blur(4px)" },
+      {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power3.inOut",
+      }
+    );
+
+    tl.fromTo(
+      ".text3",
+      { opacity: 0, sacle: 0.5, y: 10 },
+      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      "-=0.5"
+    );
+
+    tl.fromTo(
+      ".subtext",
+      { opacity: 0, sacle: 3.5, filter: "blur(4px)" },
+      {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "+=0.5"
+    );
+
+    // Input Animaition
+    tl.fromTo(
+      ".input",
+      { opacity: 0, sacle: 0.5, y: 10 },
+      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      "-=0.8"
+    );
+    tl.fromTo(
+      ".text4",
+      { opacity: 0, sacle: 0.5, y: 10 },
+      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" }
+    );
+  }, []);
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-black relative px-6 w-screen overflow-hidden">
-      <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center fontBoskaBlack text-[#121212] z-20">
-        Ze
+    <div className="h-screen flex flex-col items-center justify-center bg-background relative px-6 w-screen overflow-hidden">
+      <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo">
+        <Image
+          src={"/Logo.png"}
+          alt="Model Image"
+          fill
+          className="object-cover w-full h-full scale-[1.5]"
+        />
       </div>
+
+      {/* Texts */}
       <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-20 text-center z-20">
-        <span className="block text-xl fontBoskaitalic">A New</span>
-        <h1 className="block ">
-          Era of <span className="text-primary">Style</span>
+        <span className="block text-xl fontBoskaitalic text-red-100 text1">
+          A New
+        </span>
+        <h1 className="block text2">
+          Era of <span className="text-primary text2.1">Style</span>
         </h1>
-        <span className="block text-2xl fontBoskaitalic">Begins Soon.</span>
+        <span className="block text-2xl fontBoskaitalic text3">
+          Begins Soon..
+        </span>
       </div>
-      <p className="text-neutral-300 text-center text-sm mb-8 z-20">
+
+      {/* Subtext */}
+      <p className="text-neutral-900 text-center text-sm mb-8 z-20 subtext">
         Be among the first to experience the launch of our exclusive fashion
         brand.
       </p>
-      <div className="flex flex-col gap-4 w-full max-w-sm items-center z-20">
-        <div className="w-full border px-4 py-2 rounded-full relative bg-[#f3f3f3]">
+
+      {/* Input */}
+      <div className="flex flex-col gap-4 w-full max-w-sm items-center z-20 input">
+        <div className="w-full px-4 py-2 rounded-full relative bg-[#f3f3f3] shadow">
           <input
             type="email"
             name="email"
@@ -27,33 +143,18 @@ export default function Home() {
             placeholder="Your Email"
             className="outline-none text-black"
           />
-          <div className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs ">
-            Get your Free Ticket
-          </div>
+          <Link href={"/"}>
+            <button className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer">
+              Get your Free Ticket
+            </button>
+          </Link>
         </div>
         <Link
           href={"/"}
-          className="fontBoskaitalic text-primary text-sm hover:scale-105 transition-all duration-300 hover:underline"
+          className="fontBoska text-secondary text-md hover:scale-105 transition-all duration-300 hover:font-bold text4"
         >
-          -Join the WaitList-
+          Join the WaitList
         </Link>
-      </div>
-      <div className="absolute w-[300px] h-[600px] -left-[134px] -bottom-[350px] scale-[4] z-10 max-sm:hidden">
-        <Image
-          src={"/model5.png"}
-          alt="Model Image"
-          fill
-          className="object-cover filter blur-[1px] grayscale-100 hover:grayscale-0 transition"
-        />
-      </div>
-
-      <div className="absolute w-[300px] h-[600px] -right-32 -bottom-8 max-sm:hidden">
-        <Image
-          src={"/model4.png"}
-          alt="Model Image"
-          fill
-          className="object-cover filter blur-[1px] grayscale-100 hover:grayscale-0 transition"
-        />
       </div>
     </div>
   );

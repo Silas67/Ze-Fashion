@@ -40,6 +40,13 @@
 }
 
 @font-face {
+  font-family: "Boska-BoldItalic";
+  src: url("/fonts/Boska-BoldItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Boska-Black";
   src: url("/fonts/Boska-Black.otf") format("opentype");
   font-weight: 400;
@@ -56,6 +63,10 @@
 
 .fontBoskaBlack {
   font-family: Boska-Black, sans-serif;
+}
+
+.fontBoldItalic {
+  font-family: Boska-BoldItalic, sans-serif;
 }
 
 body {
