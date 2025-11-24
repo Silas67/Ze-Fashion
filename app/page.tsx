@@ -47,10 +47,9 @@ export default function Home() {
     // Text Animation
     tl.fromTo(
       ".text1",
-      { opacity: 0, sacle: 0.5, filter: "blur(4px)" },
+      { opacity: 0, filter: "blur(4px)" },
       {
         opacity: 1,
-        scale: 1,
         filter: "blur(0px)",
         duration: 1,
         ease: "power1.inOut",
@@ -60,10 +59,10 @@ export default function Home() {
 
     tl.fromTo(
       ".text2",
-      { opacity: 0, sacle: 0.5, filter: "blur(4px)" },
+      { opacity: 0, filter: "blur(4px)" },
       {
         opacity: 1,
-        scale: 1,
+
         filter: "blur(0px)",
         duration: 1,
         ease: "power3.inOut",
@@ -72,14 +71,14 @@ export default function Home() {
 
     tl.fromTo(
       ".text3",
-      { opacity: 0, sacle: 0.5, y: 10 },
-      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
       "-=0.5"
     );
 
     tl.fromTo(
       ".subtext",
-      { opacity: 0, sacle: 3.5, filter: "blur(4px)" },
+      { opacity: 0, scale: 1.5, filter: "blur(4px)" },
       {
         opacity: 1,
         scale: 1,
@@ -93,14 +92,23 @@ export default function Home() {
     // Input Animaition
     tl.fromTo(
       ".input",
-      { opacity: 0, sacle: 0.5, y: 10 },
-      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
       "-=0.8"
     );
     tl.fromTo(
       ".text4",
-      { opacity: 0, sacle: 0.5, y: 10 },
-      { opacity: 1, scale: 1, y: 0, duration: 1, ease: "power1.inOut" }
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      "-=1"
+    );
+
+    // Textsub Animation
+    tl.fromTo(
+      ".text2sub",
+      { backgroundColor: "#fff" },
+      { backgroundColor: "#ab7d7d", duration: 1, ease: "power2.inOut" },
+      "+=0.8"
     );
   }, []);
   return (
@@ -115,12 +123,13 @@ export default function Home() {
       </div>
 
       {/* Texts */}
-      <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-20 text-center z-20">
-        <span className="block text-xl fontBoskaitalic text-red-100 text1">
+      <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-24 text-center z-20">
+        <span className="block text-xl fontBoskaitalic text-secondary text1">
           A New
         </span>
         <h1 className="block text2">
-          Era of <span className="text-primary text2.1">Style</span>
+          Era of{" "}
+          <span className="text-primary text2sub px-2 rounded-2xl">Style</span>
         </h1>
         <span className="block text-2xl fontBoskaitalic text3">
           Begins Soon..
