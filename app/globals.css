@@ -78,3 +78,28 @@ body {
 .transition {
   transition: all 300ms ease-in-out;
 }
+
+.text-anim {
+  animation: fontMorph 0.8s infinite;
+}
+
+@keyframes fontMorph {
+  0% {
+    font-family: "Poppins", sans-serif;
+  }
+  20% {
+    font-family: Boska-LightItalic, sans-serif;
+  }
+  40% {
+    font-family: "Georgia", serif;
+  }
+  60% {
+    font-family: Boska-Black, sans-serif;
+  }
+  80% {
+    font-family: "Courier New", Courier, monospace;
+  }
+  100% {
+    font-family: Boska, sans-serif;
+  }
+}

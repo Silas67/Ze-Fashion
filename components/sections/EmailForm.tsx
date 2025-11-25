@@ -127,12 +127,11 @@ const EmailForm = ({
       { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
       "-=1"
     );
-
     // Textsub Animation
     tl.fromTo(
       ".text2sub",
       { backgroundColor: "transparent" },
-      { backgroundColor: "#ab7d7d", duration: 1, ease: "power2.inOut" },
+      { backgroundColor: "", duration: 1, ease: "power2.inOut" },
       "+=0.8"
     );
   }, []);
@@ -150,14 +149,20 @@ const EmailForm = ({
       </div>
 
       {/* Texts */}
-      <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-24 text-center z-20">
+      <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-24 text-center z-20 ">
         <span className="block text-xl fontBoskaitalic text-secondary text1">
           A New
         </span>
-        <h1 className="block text2">
-          Era of{" "}
-          <span className="text-primary text2sub px-2 rounded-2xl">Style</span>
+
+        <h1 className="flex lg:gap-4 max-sm:flex-col">
+          <span className="text2">Era of </span>
+          <h1 className="w-[200px] flex items-center justify-center">
+            <span className="text-primary text2sub px-2 rounded-2xl block w-fit text-anim border bg-secondary">
+              Style
+            </span>
+          </h1>
         </h1>
+
         <span className="block text-2xl fontBoskaitalic text3">
           Begins Soon..
         </span>
