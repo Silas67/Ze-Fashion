@@ -82,25 +82,6 @@ const WaitList = ({
     );
 
     tl.fromTo(
-      ".text2",
-      { opacity: 0, filter: "blur(4px)" },
-      {
-        opacity: 1,
-
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.inOut",
-      }
-    );
-
-    tl.fromTo(
-      ".text3",
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
-      "-=0.5"
-    );
-
-    tl.fromTo(
       ".subtext",
       { opacity: 0, scale: 1.5, filter: "blur(4px)" },
       {
@@ -110,7 +91,7 @@ const WaitList = ({
         duration: 1,
         ease: "power1.inOut",
       },
-      "+=0.5"
+      ""
     );
 
     // Input Animaition
@@ -149,22 +130,13 @@ const WaitList = ({
 
       {/* Texts */}
       <div className="text-7xl font-bold text-secondary my-6 fontBoska leading-24 text-center z-20 ">
-        <span className="block text-xl fontBoskaitalic text-secondary text1">
-          A New
-        </span>
-
-        <h1 className="text2">
-          <span>Era of </span>
-          <span className="text-primary text2sub px-2 rounded-2xl">Style</span>
+        <h1 className="fontBoskaitalic text1">
+          Join the <span className="fontBoskaBlack">ZË</span> Waitlist
         </h1>
-
-        <span className="block text-2xl fontBoskaitalic text3">
-          Begins Soon..
-        </span>
       </div>
 
       {/* Subtext */}
-      <p className="text-neutral-900 text-center text-sm mb-8 z-20 subtext">
+      <p className="text-neutral-900 text-center text-sm mb-8 z-20 subtext dark:text-neutral-300">
         Be among the first to experience the launch of our exclusive fashion
         brand.
       </p>
@@ -187,9 +159,9 @@ const WaitList = ({
 
           <button
             type="submit"
-            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
+            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary focus:shadow-2xl shadow-primary "
           >
-            Get your Free Ticket
+            Join Now
           </button>
         </form>
       </div>

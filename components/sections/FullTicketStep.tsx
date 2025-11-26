@@ -35,15 +35,35 @@ const FullTicketStep = ({
 
     tl.fromTo(
       ".formContainer",
-      { scaleY: 0, opacity: 0 },
+      { y: 100, opacity: 0 },
       {
-        scaleY: 1,
+        y: 0,
         opacity: 1,
         transformOrigin: "center center",
         duration: 1,
-        ease: "power1.inOut",
+        ease: "power4.inOut",
       },
       ""
+    );
+
+    tl.fromTo(
+      ".formDet",
+      { y: 10, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" },
+      "-=0.5"
+    );
+
+    tl.fromTo(
+      ".input",
+      { scaleX: 0, opacity: 0 },
+      {
+        scaleX: 1,
+        opacity: 1,
+        transformOrigin: "left left",
+        duration: 1,
+        ease: "power4.inOut",
+      },
+      "-=0.5"
     );
 
     tl.fromTo(
@@ -107,9 +127,11 @@ const FullTicketStep = ({
           >
             {/* Full Name */}
             <div>
-              <label className="block text-sm font-medium">Full Name *</label>
+              <label className="block text-sm font-medium formDet">
+                Full Name *
+              </label>
               <input
-                className="w-full border-b outline-none border-neutral-400 p-2"
+                className="w-full border-b input outline-none border-neutral-400 p-2"
                 value={formData.fullName}
                 onChange={(e) => updateForm({ fullName: e.target.value })}
               />
@@ -117,10 +139,12 @@ const FullTicketStep = ({
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium">Email *</label>
+              <label className="block text-sm font-medium formDet">
+                Email *
+              </label>
               <input
                 type="email"
-                className="w-full border-b outline-none border-neutral-400 p-2"
+                className="w-full border-b input outline-none border-neutral-400 p-2"
                 value={formData.email}
                 onChange={(e) => updateForm({ email: e.target.value })}
               />
@@ -128,11 +152,11 @@ const FullTicketStep = ({
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium">
+              <label className="block text-sm font-medium formDet">
                 Phone (optional)
               </label>
               <input
-                className="w-full border-b outline-none border-neutral-400 p-2"
+                className="w-full border-b input outline-none border-neutral-400 p-2"
                 value={formData.phone}
                 onChange={(e) => updateForm({ phone: e.target.value })}
               />
@@ -140,16 +164,26 @@ const FullTicketStep = ({
 
             {/* Age */}
             <div>
-              <label className="block text-sm font-medium">Age Range</label>
+              <label className="block text-sm font-medium formDet">
+                Age Range
+              </label>
               <select
-                className="w-full border-b outline-none border-neutral-400 p-2"
+                className="w-full border-b input outline-none border-neutral-400 p-2 "
                 value={formData.ageRange}
                 onChange={(e) => updateForm({ ageRange: e.target.value })}
               >
-                <option value="">Select</option>
-                <option value="18-25">18–25</option>
-                <option value="26-35">26–35</option>
-                <option value="36plus">36+</option>
+                <option value="" className="dark:text-neutral-900">
+                  Select
+                </option>
+                <option value="18-25" className="dark:text-neutral-900">
+                  18–25
+                </option>
+                <option value="26-35" className="dark:text-neutral-900">
+                  26–35
+                </option>
+                <option value="36plus" className="dark:text-neutral-900">
+                  36+
+                </option>
               </select>
             </div>
 
@@ -157,7 +191,7 @@ const FullTicketStep = ({
             <div className="flex gap-3 mt-4 w-full items-center justify-center">
               <button
                 type="submit"
-                className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[1.1] transition cursor-pointer"
+                className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[1.1] transition cursor-pointer dark:text-black hover:bg-secondary"
               >
                 Submit Ticket
               </button>

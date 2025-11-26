@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -110,8 +109,14 @@ const EmailForm = ({
         filter: "blur(0px)",
         duration: 1,
         ease: "power1.inOut",
-      },
-      "+=0.5"
+      }
+    );
+    // Textsub Animation
+    tl.fromTo(
+      ".text2sub",
+      { backgroundColor: "transparent" },
+      { backgroundColor: "#ab7d7d", duration: 1, ease: "power2.inOut" },
+      "-=0.8"
     );
 
     // Input Animaition
@@ -126,13 +131,6 @@ const EmailForm = ({
       { opacity: 0, y: 10 },
       { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
       "-=1"
-    );
-    // Textsub Animation
-    tl.fromTo(
-      ".text2sub",
-      { backgroundColor: "transparent" },
-      { backgroundColor: "", duration: 1, ease: "power2.inOut" },
-      "+=0.8"
     );
   }, []);
 
@@ -165,7 +163,7 @@ const EmailForm = ({
       </div>
 
       {/* Subtext */}
-      <p className="text-neutral-900 text-center text-sm mb-8 z-20 subtext">
+      <p className="text-neutral-900 text-center text-sm mb-8 z-20 subtext dark:text-neutral-300">
         Be among the first to experience the launch of our exclusive fashion
         brand.
       </p>
@@ -188,18 +186,18 @@ const EmailForm = ({
 
           <button
             type="submit"
-            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
+            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
           >
             Get your Free Ticket
           </button>
         </form>
 
-        <Link
-          href={"/"}
+        <button
+          onClick={onNext}
           className="fontBoska text-secondary text-md hover:scale-105 transition-all duration-300 hover:font-bold text4"
         >
           Join the WaitList
-        </Link>
+        </button>
       </div>
     </section>
   );

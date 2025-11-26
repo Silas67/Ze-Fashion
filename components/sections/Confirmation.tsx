@@ -22,7 +22,7 @@ export default function ConfirmationStep({
 
       <button
         onClick={onJoinWaitlist}
-        className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
+        className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
       >
         Join Waitlist
       </button>

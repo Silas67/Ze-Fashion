@@ -4,6 +4,7 @@ import EmailForm from "@/components/sections/EmailForm";
 import FullTicketStep from "@/components/sections/FullTicketStep";
 import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export type TicketFormType = {
   fullName: string;
@@ -67,16 +68,25 @@ export default function Home() {
       )}
 
       {step === 5 && (
-        <div className="w-full h-full flex items-center justify-center flex-col">
-          <div className="max-w-md fontBoska font-semibold">
-            Congratulations, You have been Added to the Waitlist
-          </div>
-          <button
+        <div className="w-full h-full flex items-center justify-center flex-col gap-4">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="max-w-md fontBoska font-semibold text-md text-center"
+          >
+            Congratulations, You have been Added to the{" "}
+            <span className="block text-4xl">ZË Waitlist</span>
+          </motion.div>
+          <motion.button
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
             onClick={() => setStep(1)}
-            className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
+            className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
           >
             Go Back
-          </button>
+          </motion.button>
         </div>
       )}
     </div>
