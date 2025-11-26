@@ -10,8 +10,8 @@ export default function ConfirmationStep({
   onJoinWaitlist: () => void;
 }) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-semibold">
+    <div className="space-y-4 text-center">
+      <h2 className="text-xl font-semibold fontBoska">
         Your ZË Ticket Has Been Confirmed 🎟️
       </h2>
 
@@ -22,7 +22,7 @@ export default function ConfirmationStep({
 
       <button
         onClick={onJoinWaitlist}
-        className="bg-sky-600 text-white px-4 py-2 rounded-md"
+        className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
       >
         Join Waitlist
       </button>

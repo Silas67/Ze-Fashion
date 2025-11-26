@@ -71,10 +71,13 @@ const FullTicketStep = ({
       return;
     }
 
-    await fetch("/api/tickets", {
+    await fetch("/api/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        name: formData.fullName,
+        email: formData.email,
+      }),
     });
 
     onNext();

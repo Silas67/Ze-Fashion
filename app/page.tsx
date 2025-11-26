@@ -2,6 +2,7 @@
 import ConfirmationStep from "@/components/sections/Confirmation";
 import EmailForm from "@/components/sections/EmailForm";
 import FullTicketStep from "@/components/sections/FullTicketStep";
+import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
 
 export type TicketFormType = {
@@ -45,7 +46,7 @@ export default function Home() {
         <FullTicketStep
           formData={formData}
           updateForm={updateForm}
-          onNext={() => setStep(2)}
+          onNext={() => setStep(3)}
           onBack={() => setStep(1)}
         />
       )}
@@ -53,8 +54,30 @@ export default function Home() {
       {step === 3 && (
         <ConfirmationStep
           formData={formData}
-          onJoinWaitlist={() => console.log("waitlist")}
+          onJoinWaitlist={() => setStep(4)}
         />
+      )}
+
+      {step === 4 && (
+        <WaitList
+          onNext={() => setStep(5)}
+          updateForm={updateForm}
+          initialEmail={formData.email}
+        />
+      )}
+
+      {step === 5 && (
+        <div className="w-full h-full flex items-center justify-center flex-col">
+          <div className="max-w-md fontBoska font-semibold">
+            Congratulations, You have been Added to the Waitlist
+          </div>
+          <button
+            onClick={() => setStep(1)}
+            className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer"
+          >
+            Go Back
+          </button>
+        </div>
       )}
     </div>
   );

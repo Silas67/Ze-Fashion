@@ -1,11 +1,10 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
 
-const EmailForm = ({
+const WaitList = ({
   onNext,
   updateForm,
   initialEmail,
@@ -193,16 +192,9 @@ const EmailForm = ({
             Get your Free Ticket
           </button>
         </form>
-
-        <Link
-          href={"/"}
-          className="fontBoska text-secondary text-md hover:scale-105 transition-all duration-300 hover:font-bold text4"
-        >
-          Join the WaitList
-        </Link>
       </div>
     </section>
   );
 };
 
-export default EmailForm;
+export default WaitList;
