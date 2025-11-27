@@ -1,23 +1,57 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
+import QRCode from "qrcode";
+import { ticketTemplate } from "@/app/emails/ticketTemplate";
 
 export async function POST(req: Request) {
-    const { email, name } = await req.json();
-
     try {
-        console.log("Sending email to:", email);
-        await resend.emails.send({
-            from: "Tickets <tickets@resend.dev>",
-            to: email,
-            subject: "Your ZË Ticket",
-            text: `Hi ${name}, your ticket has been confirmed!`,
+        const { name, email } = await req.json();
+
+        if (!email || !name) {
+            return new Response("Missing name or email", { status: 400 });
+        }
+
+        const ticketId = Math.random().toString(36).slice(2, 10).toUpperCase()
+        const qrData = `ticket:${ticketId}`; // whatever you want inside the QR
+        const qrImage = await QRCode.toDataURL(qrData);
+
+
+        // Create transporter (example: Gmail)
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS,
+            },
         });
-        console.log("Email sent successfully");
-        return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error("Error sending email:", error);
-        return NextResponse.json({ error: error }, { status: 500 });
+
+        // Email contents
+        const mailOptions = {
+            from: `"ZË Tickets" < ${process.env.MAIL_USER}> `,
+            to: email,
+            subject: "Your ZË Entry Ticket",
+            html: ticketTemplate({
+                name,
+                eventDate: "Dec 15, 2025",
+                startTime: "12:00 PM",
+                venue: "The Commune Studio, Abuja",
+                ticketType: "General Entry",
+                ticketId,
+                qrImage,
+            }),
+            attachments: [
+                {
+                    filename: "ze-logo.png",
+                    path: "./public/email.jpeg",  // local file
+                    cid: "zeLogo",  // must match src="cid:zeLogo"
+                }
+            ]
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        return new Response("Email sent successfully", { status: 200 });
+    } catch (err) {
+        console.error(err);
+        return new Response("Failed to send email", { status: 500 });
     }
 }

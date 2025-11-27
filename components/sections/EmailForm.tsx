@@ -7,9 +7,11 @@ import { useState } from "react";
 const EmailForm = ({
   onNext,
   updateForm,
+  Waitlist,
   initialEmail,
 }: {
   onNext: () => void;
+  Waitlist: () => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateForm: (data: any) => void;
   initialEmail: string;
@@ -193,7 +195,7 @@ const EmailForm = ({
         </form>
 
         <button
-          onClick={onNext}
+          onClick={Waitlist}
           className="fontBoska text-secondary text-md hover:scale-105 transition-all duration-300 hover:font-bold text4"
         >
           Join the WaitList

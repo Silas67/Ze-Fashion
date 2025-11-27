@@ -38,6 +38,7 @@ export default function Home() {
       {step === 1 && (
         <EmailForm
           onNext={() => setStep(2)}
+          Waitlist={() => setStep(4)}
           updateForm={updateForm}
           initialEmail={formData.email}
         />
