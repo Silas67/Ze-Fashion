@@ -90,8 +90,7 @@ const WaitList = ({
         filter: "blur(0px)",
         duration: 1,
         ease: "power1.inOut",
-      },
-      ""
+      }
     );
 
     // Input Animaition
@@ -100,19 +99,6 @@ const WaitList = ({
       { opacity: 0, y: 10 },
       { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
       "-=0.8"
-    );
-    tl.fromTo(
-      ".text4",
-      { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
-      "-=1"
-    );
-    // Textsub Animation
-    tl.fromTo(
-      ".text2sub",
-      { backgroundColor: "transparent" },
-      { backgroundColor: "", duration: 1, ease: "power2.inOut" },
-      "+=0.8"
     );
   }, []);
 

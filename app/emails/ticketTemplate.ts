@@ -42,13 +42,13 @@ export function ticketTemplate({
 
       <p style="font-size:16px;">
         Welcome to something different.  
-        Your registration for the <strong>ZË Fashion × Creativity Exhibition — STILL</strong> 
+        Your registration for the <strong>ZË Fashion × Creativity Exhibition STILL</strong> 
         is officially confirmed and we’re thrilled to have you.
       </p>
 
       <p style="font-size:16px;">
         This isn’t just another event.  
-        It’s an immersive experience — a moment where creativity, fashion, art, and atmosphere
+        It’s an immersive experience a moment where creativity, fashion, art, and atmosphere
         come alive in a way Abuja has never seen before.
       </p>
 

@@ -5,6 +5,8 @@ import FullTicketStep from "@/components/sections/FullTicketStep";
 import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Threads from "@/components/sections/Thread";
+import { THREAD_COLORS } from "@/components/sections/Thread";
 
 export type TicketFormType = {
   fullName: string;
@@ -29,12 +31,16 @@ export default function Home() {
     creativeField: "",
     confirmAttendance: false,
   });
+
   function updateForm(data: Partial<TicketFormType>) {
     setFormData((prev) => ({ ...prev, ...data }));
   }
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-background relative px-6 w-screen overflow-hidden">
+      <div className="w-full h-full z-10 absolute inset-0 filter blur-[2px] ">
+        <Threads color={THREAD_COLORS.rose} amplitude={1} distance={0.2} />
+      </div>
       {step === 1 && (
         <EmailForm
           onNext={() => setStep(2)}
@@ -69,25 +75,24 @@ export default function Home() {
       )}
 
       {step === 5 && (
-        <div className="w-full h-full flex items-center justify-center flex-col gap-4">
+        <div className="w-full h-full flex items-center justify-center gap-4 z-30">
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="max-w-md fontBoska font-semibold text-md text-center"
+            className="text-center space-y-4  py-8 px-12 rounded-3xl backdrop-blur-xs shadow"
           >
-            Congratulations, You have been Added to the{" "}
-            <span className="block text-4xl">ZË Waitlist</span>
+            <div className="max-w-md fontBoska font-semibold text-md text-center">
+              Congratulations, You have been Added to the{" "}
+              <span className="block text-4xl">ZË Waitlist</span>
+            </div>
+            <button
+              onClick={() => setStep(1)}
+              className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
+            >
+              Go Back
+            </button>
           </motion.div>
-          <motion.button
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-            onClick={() => setStep(1)}
-            className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
-          >
-            Go Back
-          </motion.button>
         </div>
       )}
     </div>
