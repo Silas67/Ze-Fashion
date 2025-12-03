@@ -9,12 +9,12 @@ const FullTicketStep = ({
   formData,
   updateForm,
   onNext,
-  onBack,
+  onReturn,
 }: {
   formData: TicketFormType;
   updateForm: (data: Partial<TicketFormType>) => void;
   onNext: () => void;
-  onBack: () => void;
+  onReturn: () => void;
 }) => {
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -142,9 +142,12 @@ const FullTicketStep = ({
   return (
     <>
       <div className="container w-full flex items-center justify-center relative overflow-hidden">
-        <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
+        <button
+          onClick={onReturn}
+          className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+        >
           <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
-        </div>
+        </button>
         {/* Form */}
         <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full ">
           <div className="w-full flex items-center justify-center">
@@ -234,14 +237,6 @@ const FullTicketStep = ({
                 className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[1.1] transition cursor-pointer dark:text-black hover:bg-secondary"
               >
                 Submit Ticket
-              </button>
-
-              <button
-                type="button"
-                onClick={onBack}
-                className="w-fit px-4 py-2 fontBoska text-sm transition rounded-full border border-transparent hover:border-primary hover:scale-[0.9] font-bold"
-              >
-                Back
               </button>
             </div>
           </form>

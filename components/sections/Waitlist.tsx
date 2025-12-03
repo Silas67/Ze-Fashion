@@ -7,10 +7,12 @@ import { HiOutlineArrowLeftEndOnRectangle } from "react-icons/hi2";
 
 const WaitList = ({
   onNext,
+  onReturn,
   updateForm,
   initialEmail,
 }: {
   onNext: () => void;
+  onReturn: () => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateForm: (data: any) => void;
   initialEmail: string;
@@ -106,9 +108,12 @@ const WaitList = ({
   return (
     <section className="w-full h-full flex flex-col items-center justify-center relative">
       {/* Arrow */}
-      <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
+      <button
+        onClick={onReturn}
+        className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+      >
         <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
-      </div>
+      </button>
 
       {/* Logo */}
       <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo">

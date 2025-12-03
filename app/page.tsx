@@ -52,7 +52,7 @@ export default function Home() {
           formData={formData}
           updateForm={updateForm}
           onNext={() => setStep(3)}
-          onBack={() => setStep(1)}
+          onReturn={() => setStep(step - 1)}
         />
       )}
 
@@ -60,12 +60,14 @@ export default function Home() {
         <ConfirmationStep
           formData={formData}
           onJoinWaitlist={() => setStep(4)}
+          onReturn={() => setStep(step - 1)}
         />
       )}
 
       {step === 4 && (
         <WaitList
           onNext={() => setStep(5)}
+          onReturn={() => setStep(step - 2)}
           updateForm={updateForm}
           initialEmail={formData.email}
         />

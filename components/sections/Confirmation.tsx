@@ -6,15 +6,20 @@ import { HiOutlineArrowLeftEndOnRectangle } from "react-icons/hi2";
 export default function ConfirmationStep({
   formData,
   onJoinWaitlist,
+  onReturn,
 }: {
   formData: TicketFormType;
   onJoinWaitlist: () => void;
+  onReturn: () => void;
 }) {
   return (
     <div className="flex items-center justify-center relative w-full h-full">
-      <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
+      <button
+        onClick={onReturn}
+        className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+      >
         <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
-      </div>
+      </button>
       <div className="space-y-4 text-center  p-8 rounded-3xl backdrop-blur-xs shadow z-30">
         <motion.h2
           initial={{ opacity: 0 }}

@@ -144,9 +144,6 @@ const EmailForm = ({
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-center relative">
-      <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
-        <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
-      </div>
       {/* Logo */}
       <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo">
         <Image
@@ -165,7 +162,9 @@ const EmailForm = ({
 
         <h1 className="text2">
           <span>Era of </span>
-          <span className="text-primary text2sub px-2 rounded-2xl ">Style</span>
+          <span className="text-primary text2sub px-2 rounded-2xl cursor-pointer">
+            Style
+          </span>
         </h1>
 
         <span className="block text-2xl fontBoskaitalic text3">
@@ -174,7 +173,7 @@ const EmailForm = ({
       </div>
 
       {/* Subtext */}
-      <p className="text-[#C4D1E6] text-center text-sm mb-8 z-20 subtext dark:text-neutral-300">
+      <p className="text-neutral-800 text-center text-sm mb-8 z-20 subtext dark:text-neutral-300">
         Be among the first to experience the launch of our exclusive fashion
         brand.
       </p>
@@ -205,7 +204,7 @@ const EmailForm = ({
 
         <button
           onClick={Waitlist}
-          className="fontBoska text-secondary text-md hover:scale-105 transition-all duration-300 hover:font-bold text4 cursor-pointer"
+          className="fontBoska text-secondary text-sm italic hover:scale-105 transition-all duration-300 hover:font-bold text4 cursor-pointer"
         >
           Join the WaitList
         </button>
