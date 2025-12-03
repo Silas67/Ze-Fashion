@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Waitlist {
+  id            String   @id @default(uuid())
+  full_name     String?
+  email         String   @unique
+  phone         String?
+  city          String?
+  interest_level String?
+  early_access  Boolean?
+  created_at    DateTime @default(now())
+}

@@ -38,9 +38,6 @@ export default function Home() {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center bg-background relative px-6 w-screen overflow-hidden">
-      <div className="w-full h-full z-10 absolute inset-0 filter blur-[2px] ">
-        <Threads color={THREAD_COLORS.rose} amplitude={1} distance={0.2} />
-      </div>
       {step === 1 && (
         <EmailForm
           onNext={() => setStep(2)}
