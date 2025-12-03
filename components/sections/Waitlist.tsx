@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
+import { HiOutlineArrowLeftEndOnRectangle } from "react-icons/hi2";
 
 const WaitList = ({
   onNext,
@@ -104,6 +105,11 @@ const WaitList = ({
 
   return (
     <section className="w-full h-full flex flex-col items-center justify-center relative">
+      {/* Arrow */}
+      <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
+        <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
+      </div>
+
       {/* Logo */}
       <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo">
         <Image
@@ -150,6 +156,9 @@ const WaitList = ({
             Join Now
           </button>
         </form>
+        <button className="fontBoska text-secondary text-xs hover:scale-105 transition-all duration-300 hover:font-bold text4 cursor-pointer italic">
+          Have Time For A Quick Survey?
+        </button>
       </div>
     </section>
   );

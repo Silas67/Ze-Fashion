@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-background relative px-6 w-screen overflow-hidden">
+    <div className="h-screen flex flex-col items-center justify-center bg-background  relative px-6 w-screen overflow-hidden">
       {step === 1 && (
         <EmailForm
           onNext={() => setStep(2)}

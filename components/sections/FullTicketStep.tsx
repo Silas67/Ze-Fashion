@@ -3,6 +3,7 @@ import { TicketFormType } from "@/app/page";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
+import { HiOutlineArrowLeftEndOnRectangle } from "react-icons/hi2";
 
 const FullTicketStep = ({
   formData,
@@ -54,7 +55,7 @@ const FullTicketStep = ({
     );
 
     tl.fromTo(
-      ".input",
+      ".input1",
       { scaleX: 0, opacity: 0 },
       {
         scaleX: 1,
@@ -64,6 +65,42 @@ const FullTicketStep = ({
         ease: "power4.inOut",
       },
       "-=0.5"
+    );
+    tl.fromTo(
+      ".input2",
+      { scaleX: 0, opacity: 0 },
+      {
+        scaleX: 1,
+        opacity: 1,
+        transformOrigin: "left left",
+        duration: 1,
+        ease: "power4.inOut",
+      },
+      "-=0.8"
+    );
+    tl.fromTo(
+      ".input3",
+      { scaleX: 0, opacity: 0 },
+      {
+        scaleX: 1,
+        opacity: 1,
+        transformOrigin: "left left",
+        duration: 1,
+        ease: "power4.inOut",
+      },
+      "-=0.8"
+    );
+    tl.fromTo(
+      ".input4",
+      { scaleX: 0, opacity: 0 },
+      {
+        scaleX: 1,
+        opacity: 1,
+        transformOrigin: "left left",
+        duration: 1,
+        ease: "power4.inOut",
+      },
+      "-=0.8"
     );
 
     tl.fromTo(
@@ -105,6 +142,9 @@ const FullTicketStep = ({
   return (
     <>
       <div className="container w-full flex items-center justify-center relative overflow-hidden">
+        <div className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4">
+          <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
+        </div>
         {/* Form */}
         <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full ">
           <div className="w-full flex items-center justify-center">
@@ -131,7 +171,7 @@ const FullTicketStep = ({
                 Full Name *
               </label>
               <input
-                className="w-full border-b input outline-none border-neutral-400 p-2"
+                className="w-full border-b input1 outline-none border-neutral-400 p-2"
                 value={formData.fullName}
                 onChange={(e) => updateForm({ fullName: e.target.value })}
               />
@@ -144,7 +184,7 @@ const FullTicketStep = ({
               </label>
               <input
                 type="email"
-                className="w-full border-b input outline-none border-neutral-400 p-2"
+                className="w-full border-b input2 outline-none border-neutral-400 p-2"
                 value={formData.email}
                 onChange={(e) => updateForm({ email: e.target.value })}
               />
@@ -156,7 +196,7 @@ const FullTicketStep = ({
                 Phone (optional)
               </label>
               <input
-                className="w-full border-b input outline-none border-neutral-400 p-2"
+                className="w-full border-b input3 outline-none border-neutral-400 p-2"
                 value={formData.phone}
                 onChange={(e) => updateForm({ phone: e.target.value })}
               />
@@ -168,7 +208,7 @@ const FullTicketStep = ({
                 Age Range
               </label>
               <select
-                className="w-full border-b input outline-none border-neutral-400 p-2 "
+                className="w-full border-b input4 outline-none border-neutral-400 p-2 "
                 value={formData.ageRange}
                 onChange={(e) => updateForm({ ageRange: e.target.value })}
               >
