@@ -5,8 +5,6 @@ import FullTicketStep from "@/components/sections/FullTicketStep";
 import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Threads from "@/components/sections/Thread";
-import { THREAD_COLORS } from "@/components/sections/Thread";
 
 export type TicketFormType = {
   fullName: string;
@@ -14,7 +12,7 @@ export type TicketFormType = {
   phone?: string;
   ageRange?: string;
   heardFrom?: string;
-  isCreative?: string;
+  isCreative?: boolean;
   creativeField?: string;
   confirmAttendance?: boolean;
 };
@@ -27,7 +25,7 @@ export default function Home() {
     phone: "",
     ageRange: "",
     heardFrom: "",
-    isCreative: "",
+    isCreative: false,
     creativeField: "",
     confirmAttendance: false,
   });

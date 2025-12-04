@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
-import { HiOutlineArrowLeftEndOnRectangle } from "react-icons/hi2";
-
 const EmailForm = ({
   onNext,
   updateForm,
@@ -209,12 +207,16 @@ const EmailForm = ({
           Join the WaitList
         </button>
       </div>
-      <div className="absolute w-[300px] h-[300px] border-2 border-primary -top-16 right-[200px] rounded-full circle blur-[3px]">
-        <div className=" w-[200px] h-[200px] border-2 border-primary rounded-full relative top-32"></div>
+      <div className="">
+        <div className="absolute w-[300px] h-[300px] border-2 border-primary -top-16 right-[200px] rounded-full circle blur-[3px]">
+          <div className=" w-[200px] h-[200px] border-2 border-primary rounded-full relative top-32 rotateobj ">
+            <div className="w-9 h-9 rounded-full bg-primary absolute top-0 left-6"></div>
+          </div>
+        </div>
       </div>
 
-      <div className="absolute w-[300px] h-[300px] border-2 border-primary -bottom-32 left-[200px] rounded-full circle blur-[3px]">
-        {/* <div className=" w-[200px] h-[200px] border-2 border-primary rounded-full relative bottom-32"></div> */}
+      <div className="absolute w-[300px] h-[300px] border-2 border-primary -bottom-32 left-[200px] rounded-full circle blur-[3px] rotateobj">
+        <div className="w-9 h-9 rounded-full bg-primary absolute top-0 left-16"></div>
       </div>
     </section>
   );

@@ -103,3 +103,18 @@ body {
     font-family: Boska, sans-serif;
   }
 }
+
+.rotateobj {
+  animation: rotate infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

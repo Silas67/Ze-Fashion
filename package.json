@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@prisma/client": "^6.19.0",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "next": "16.0.3",
     "nodemailer": "^7.0.11",
     "ogl": "^1.0.11",
+    "pg": "^8.16.3",
     "postgres": "^3.4.7",
+    "prisma": "^6.19.0",
     "qrcode": "^1.5.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
@@ -23,16 +26,15 @@
     "resend": "^6.5.2"
   },
   "devDependencies": {
-    "@prisma/client": "^7.0.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.4",
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
-    "prisma": "^7.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

@@ -5,20 +5,23 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 generator client {
   provider = "prisma-client-js"
 }
 
-model Waitlist {
-  id            String   @id @default(uuid())
-  full_name     String?
-  email         String   @unique
-  phone         String?
-  city          String?
-  interest_level String?
-  early_access  Boolean?
-  created_at    DateTime @default(now())
+model Ticket {
+  id             String   @id @default(uuid())
+  name           String
+  email          String   @unique
+  phone          String?
+  ageRange       String?
+  isCreative     Boolean? 
+  creativeField  String?
+  createdAt      DateTime @default(now())
 }
+
+

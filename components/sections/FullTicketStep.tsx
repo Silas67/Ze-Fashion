@@ -102,6 +102,29 @@ const FullTicketStep = ({
       },
       "-=0.8"
     );
+    tl.fromTo(
+      ".input5",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "-=0.8"
+    );
+    tl.fromTo(
+      ".input6",
+      { scaleX: 0, opacity: 0 },
+      {
+        scaleX: 1,
+        opacity: 1,
+        transformOrigin: "left left",
+        duration: 1,
+        ease: "power4.inOut",
+      },
+      "-=0.8"
+    );
 
     tl.fromTo(
       ".heading",
@@ -120,6 +143,7 @@ const FullTicketStep = ({
       "-=0.5"
     );
   }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -134,6 +158,10 @@ const FullTicketStep = ({
       body: JSON.stringify({
         name: formData.fullName,
         email: formData.email,
+        ageRange: formData.ageRange,
+        phone: formData.phone,
+        creative: formData.isCreative,
+        creativeField: formData.creativeField,
       }),
     });
 
@@ -149,7 +177,7 @@ const FullTicketStep = ({
           <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
         </button>
         {/* Form */}
-        <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full ">
+        <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full">
           <div className="w-full flex items-center justify-center">
             <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo mb-4">
               <Image
@@ -166,7 +194,7 @@ const FullTicketStep = ({
           </h1>
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 formContainer lg:w-xl  shadow shadow-[#c2c1bf] backdrop-blur-xs px-8 py-12 rounded-xl overflow-hidden "
+            className="space-y-4 formContainer lg:w-xl  shadow shadow-[#c2c1bf] backdrop-blur-xs px-8 py-12 rounded-xl overflow-y-scroll h-[400px]"
           >
             {/* Full Name */}
             <div>
@@ -229,6 +257,53 @@ const FullTicketStep = ({
                 </option>
               </select>
             </div>
+
+            {/* Creative */}
+            <fieldset className="input5">
+              <legend className="block text-sm font-medium formDet">
+                Are you a creative?
+              </legend>
+
+              <div className="flex items-center gap-4">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="creative_choice"
+                    checked={formData.isCreative === true}
+                    onChange={() => updateForm({ isCreative: true })}
+                  />
+                  Yes
+                </label>
+
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="creative_choice"
+                    checked={formData.isCreative === false}
+                    onChange={() =>
+                      updateForm({ isCreative: false, creativeField: "" })
+                    }
+                  />
+                  No
+                </label>
+              </div>
+            </fieldset>
+
+            {/* Creative Field */}
+            {formData.isCreative && (
+              <div>
+                <label className="block text-sm font-medium formDet">
+                  What field of creativity?
+                </label>
+                <input
+                  className="w-full border-b input3 outline-none border-neutral-400 p-2"
+                  value={formData.creativeField ?? ""}
+                  onChange={(e) =>
+                    updateForm({ creativeField: e.target.value })
+                  }
+                />
+              </div>
+            )}
 
             {/* Buttons */}
             <div className="flex gap-3 mt-4 w-full items-center justify-center">
