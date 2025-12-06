@@ -5,6 +5,7 @@ import FullTicketStep from "@/components/sections/FullTicketStep";
 import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaHome } from "react-icons/fa";
 
 export type TicketFormType = {
   fullName: string;
@@ -72,7 +73,13 @@ export default function Home() {
       )}
 
       {step === 5 && (
-        <div className="w-full h-full flex items-center justify-center gap-4 z-30">
+        <div className="w-full h-full flex items-center justify-center gap-4 z-30 flex-col">
+          <button
+            onClick={() => setStep(step - 1)}
+            className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+          >
+            <FaHome className="text-2xl text-neutral-700" />
+          </button>
           <motion.div
             initial={{ y: 10, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -83,13 +90,10 @@ export default function Home() {
               Congratulations, You have been Added to the{" "}
               <span className="block text-4xl">ZË Waitlist</span>
             </div>
-            <button
-              onClick={() => setStep(1)}
-              className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
-            >
-              Go Back
-            </button>
           </motion.div>
+          <div className="text-xs italic text-secondary cursor-pointer hover:scale-105 transition">
+            Proceed to short survey .
+          </div>
         </div>
       )}
     </div>
