@@ -169,7 +169,7 @@ const FullTicketStep = ({
   }
   return (
     <>
-      <div className="container w-full flex items-center justify-center relative overflow-hidden">
+      <div className="container w-full flex items-center justify-center relative overflow-hidden h-full">
         <button
           onClick={onReturn}
           className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"

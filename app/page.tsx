@@ -50,7 +50,7 @@ export default function Home() {
           formData={formData}
           updateForm={updateForm}
           onNext={() => setStep(3)}
-          onReturn={() => setStep(step - 1)}
+          onReturn={() => setStep(1)}
         />
       )}
 
