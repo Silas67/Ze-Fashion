@@ -6,6 +6,7 @@ import WaitList from "@/components/sections/Waitlist";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaHome } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export type TicketFormType = {
   fullName: string;
@@ -91,9 +92,18 @@ export default function Home() {
               <span className="block text-4xl">ZË Waitlist</span>
             </div>
           </motion.div>
-          <div className="text-xs italic text-secondary cursor-pointer hover:scale-105 transition font-bold text4">
-            Proceed to short survey .
-          </div>
+          <button
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLSe6qftSKOeUvqFSZBkP26_mF-rscW_5zR6-X9zd49RUfejz4w/viewform?usp=dialog",
+                "_blank"
+              )
+            }
+            className="text-xs italic text-secondary cursor-pointer hover:scale-95 transition font-bold text4 flex items-center justify-center gap-2 hover:text-black"
+          >
+            Proceed to short survey
+            <FaArrowRightLong />
+          </button>
         </div>
       )}
     </div>
