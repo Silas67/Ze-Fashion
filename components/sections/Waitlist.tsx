@@ -78,7 +78,7 @@ const WaitList = ({
       {
         opacity: 1,
         filter: "blur(0px)",
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
       },
       "-=0.5"
@@ -91,7 +91,7 @@ const WaitList = ({
         opacity: 1,
         scale: 1,
         filter: "blur(0px)",
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
       }
     );
@@ -100,7 +100,7 @@ const WaitList = ({
     tl.fromTo(
       ".input",
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power1.inOut" },
       "-=0.8"
     );
   }, []);
@@ -110,7 +110,7 @@ const WaitList = ({
       {/* Arrow */}
       <button
         onClick={onReturn}
-        className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+        className="w-9 h-9 rounded-md  z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
       >
         <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
       </button>
@@ -156,7 +156,7 @@ const WaitList = ({
 
           <button
             type="submit"
-            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary focus:shadow-2xl shadow-primary "
+            className="absolute top-1 right-1 w-fit bg-secondary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer text-white hover:bg-primary focus:shadow-2xl shadow-primary "
           >
             Join Now
           </button>
@@ -164,6 +164,17 @@ const WaitList = ({
         <button className="fontBoska text-secondary text-xs hover:scale-105 transition-all duration-300 hover:font-bold text4 cursor-pointer italic">
           Have Time For A Quick Survey?
         </button>
+      </div>
+      <div className="">
+        <div className="absolute w-[300px] h-[300px] border-2 border-primary -top-16 right-[200px] rounded-full circle blur-[3px]">
+          <div className=" w-[200px] h-[200px] border-2 border-primary rounded-full relative top-32 rotateobj ">
+            <div className="w-9 h-9 rounded-full bg-primary absolute top-0 left-6"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute w-[300px] h-[300px] border-2 border-primary -bottom-32 left-[200px] rounded-full circle blur-[3px] rotateobj">
+        <div className="w-9 h-9 rounded-full bg-primary absolute top-0 left-16"></div>
       </div>
     </section>
   );

@@ -76,7 +76,7 @@ const EmailForm = ({
       {
         opacity: 1,
         filter: "blur(0px)",
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
       },
       "-=0.5"
@@ -89,7 +89,7 @@ const EmailForm = ({
         opacity: 1,
 
         filter: "blur(0px)",
-        duration: 1,
+        duration: 0.5,
         ease: "power3.inOut",
       }
     );
@@ -97,7 +97,7 @@ const EmailForm = ({
     tl.fromTo(
       ".text3",
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power1.inOut" },
       "-=0.5"
     );
 
@@ -108,7 +108,7 @@ const EmailForm = ({
         opacity: 1,
         scale: 1,
         filter: "blur(0px)",
-        duration: 1,
+        duration: 0.5,
         ease: "power1.inOut",
       }
     );
@@ -118,7 +118,7 @@ const EmailForm = ({
       { backgroundColor: "transparent" },
       {
         backgroundColor: "#ab7d7d",
-        duration: 1,
+        duration: 0.5,
         ease: "power2.inOut",
         boxShadow: "",
       },
@@ -129,13 +129,13 @@ const EmailForm = ({
     tl.fromTo(
       ".input",
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power1.inOut" },
       "-=0.8"
     );
     tl.fromTo(
       ".text4",
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 1, ease: "power1.inOut" },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power1.inOut" },
       "-=1"
     );
   }, []);
@@ -171,9 +171,9 @@ const EmailForm = ({
       </div>
 
       {/* Subtext */}
-      <p className="text-neutral-800 text-center text-sm mb-8 z-20 subtext dark:text-neutral-300">
-        Be among the first to experience the launch of our exclusive fashion
-        brand.
+      <p className="text-neutral-800 text-center text-sm mb-8 z-20 subtext dark:text-neutral-300 max-w-md ">
+        Get your ticket and be among the first to experience the launch of our
+        exclusive fashion brand.
       </p>
 
       {/* Input */}
@@ -194,7 +194,9 @@ const EmailForm = ({
 
           <button
             type="submit"
-            className="absolute top-1 right-1 w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer dark:text-black hover:bg-secondary"
+            className="absolute top-1 right-1 w-fit
+            bg-secondary shadow p-2 rounded-full text-xs hover:scale-[0.9] transition cursor-pointer
+            text-white hover:bg-primary"
           >
             Get your Free Ticket
           </button>

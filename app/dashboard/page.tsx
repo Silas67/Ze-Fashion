@@ -8,8 +8,10 @@ export default async function Dashboard() {
   });
 
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold mb-6">Ticket Dashboard 🎟️</h1>
+    <div className="h-screen w-fit bg-background  relative p-10 overflow-hidden">
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        Ticket Dashboard 🎟️
+      </h1>
 
       <table className="w-full border-collapse text-left">
         <thead>

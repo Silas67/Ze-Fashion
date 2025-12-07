@@ -41,7 +41,7 @@ const FullTicketStep = ({
         y: 0,
         opacity: 1,
         transformOrigin: "center center",
-        duration: 1,
+        duration: 0.5,
         ease: "power4.inOut",
       },
       ""
@@ -50,7 +50,7 @@ const FullTicketStep = ({
     tl.fromTo(
       ".formDet",
       { y: 10, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" },
+      { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" },
       "-=0.5"
     );
 
@@ -132,7 +132,7 @@ const FullTicketStep = ({
       {
         filter: "blur(0px)",
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         ease: "power2.inOut",
       }
     );
@@ -169,15 +169,15 @@ const FullTicketStep = ({
   }
   return (
     <>
-      <div className="container w-full flex items-center justify-center relative overflow-hidden h-full">
+      <div className="container w-full flex items-center justify-center relative overflow-hidden h-screen">
         <button
           onClick={onReturn}
-          className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
+          className="w-9 h-9 rounded-md  z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
         >
           <HiOutlineArrowLeftEndOnRectangle className="text-2xl text-neutral-700" />
         </button>
         {/* Form */}
-        <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full">
+        <div className="lg:flex items-center flex-col scale-[0.95] z-20 max-sm:w-full ">
           <div className="w-full flex items-center justify-center">
             <div className="w-9 h-9 rounded-md bg-primary z-20 relative logo mb-4">
               <Image
@@ -306,12 +306,19 @@ const FullTicketStep = ({
             )}
 
             {/* Buttons */}
-            <div className="flex gap-3 mt-4 w-full items-center justify-center">
+            <div
+              className="flex gap-3 
+            mt-4 w-full items-center justify-center"
+            >
               <button
                 type="submit"
-                className=" w-fit bg-primary shadow p-2 rounded-full text-xs hover:scale-[1.1] transition cursor-pointer dark:text-black hover:bg-secondary"
+                className=" w-fit bg-secondary 
+                shadow p-2 rounded-full text-xs 
+                hover:scale-[1.1] transition 
+                cursor-pointer text-white
+                 hover:bg-primary"
               >
-                Submit Ticket
+                Get Ticket
               </button>
             </div>
           </form>

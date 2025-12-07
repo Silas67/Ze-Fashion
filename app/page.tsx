@@ -75,7 +75,7 @@ export default function Home() {
       {step === 5 && (
         <div className="w-full h-full flex items-center justify-center gap-4 z-30 flex-col">
           <button
-            onClick={() => setStep(step - 1)}
+            onClick={() => setStep(1)}
             className="w-9 h-9 rounded-md bg-primary z-20 absolute flex items-center justify-center top-4 left-4 hover:scale-[0.8] transition hover:bg-secondary cursor-pointer scale-[0.9]"
           >
             <FaHome className="text-2xl text-neutral-700" />
@@ -91,7 +91,7 @@ export default function Home() {
               <span className="block text-4xl">ZË Waitlist</span>
             </div>
           </motion.div>
-          <div className="text-xs italic text-secondary cursor-pointer hover:scale-105 transition">
+          <div className="text-xs italic text-secondary cursor-pointer hover:scale-105 transition font-bold text4">
             Proceed to short survey .
           </div>
         </div>
