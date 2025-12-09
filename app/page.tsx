@@ -101,7 +101,7 @@ export default function Home() {
             }
             className="text-xs italic text-secondary cursor-pointer hover:scale-95 transition font-bold text4 flex items-center justify-center gap-2 hover:text-black"
           >
-            Proceed to short survey
+            Proceed to our optional Survey
             <FaArrowRightLong />
           </button>
         </div>
