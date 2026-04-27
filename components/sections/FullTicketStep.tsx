@@ -31,7 +31,7 @@ const FullTicketStep = ({
         scale: 1,
         duration: 1,
         ease: "power2.inOut",
-      }
+      },
     );
 
     tl.fromTo(
@@ -44,14 +44,14 @@ const FullTicketStep = ({
         duration: 0.5,
         ease: "power4.inOut",
       },
-      ""
+      "",
     );
 
     tl.fromTo(
       ".formDet",
       { y: 10, opacity: 0 },
       { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" },
-      "-=0.5"
+      "-=0.5",
     );
 
     tl.fromTo(
@@ -64,7 +64,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power4.inOut",
       },
-      "-=0.5"
+      "-=0.5",
     );
     tl.fromTo(
       ".input2",
@@ -76,7 +76,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power4.inOut",
       },
-      "-=0.8"
+      "-=0.8",
     );
     tl.fromTo(
       ".input3",
@@ -88,7 +88,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power4.inOut",
       },
-      "-=0.8"
+      "-=0.8",
     );
     tl.fromTo(
       ".input4",
@@ -100,7 +100,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power4.inOut",
       },
-      "-=0.8"
+      "-=0.8",
     );
     tl.fromTo(
       ".input5",
@@ -111,7 +111,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power1.inOut",
       },
-      "-=0.8"
+      "-=0.8",
     );
     tl.fromTo(
       ".input6",
@@ -123,7 +123,7 @@ const FullTicketStep = ({
         duration: 1,
         ease: "power4.inOut",
       },
-      "-=0.8"
+      "-=0.8",
     );
 
     tl.fromTo(
@@ -134,13 +134,13 @@ const FullTicketStep = ({
         opacity: 1,
         duration: 0.8,
         ease: "power2.inOut",
-      }
+      },
     );
 
     tl.to(
       ".circle",
       { opacity: 1, duration: 1, ease: "power1.inOut" },
-      "-=0.5"
+      "-=0.5",
     );
   }, []);
 
